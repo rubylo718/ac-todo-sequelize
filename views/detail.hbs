@@ -1,0 +1,20 @@
+<h4>Task Detail</h4>
+<form action="/todos/{{ todo.id }}?_method=DELETE" method="POST">
+  <div class="card">
+    <div class="card-header">
+      <input class="m-2" type="checkbox" name="isDone" {{#if todo.isDone}} checked {{/if}} disabled>
+      {{ todo.name }}
+    </div>
+    <div class="card-body">
+      {{#is todo.priority "1"}} <h6>Priority: High</h6> {{/is}}
+      {{#is todo.priority "2"}} <h6>Priority: Normal</h6> {{/is}}
+      <h6>Note: </h6>
+      <p class="card-text">{{ todo.note }}</p>
+    </div>
+    <div class="card-footer">
+      <a class="btn btn-info" href="/" type="button">OK</a>
+      <a class="btn btn-success {{#if todo.isDone}} disabled {{/if}}" href="/todos/{{ todo.id }}/edit">Edit</a>
+      <button class="btn btn-danger" type="submit">Delete</button>
+    </div>
+  </div>
+</form>

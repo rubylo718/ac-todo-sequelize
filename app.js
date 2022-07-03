@@ -51,6 +51,13 @@ app.post('/users/register', (req, res) => {
     .then(user => res.redirect('/'))
 })
 
+app.get('/todos/:id', (req, res) => {
+  const id = req.params.id
+  return Todo.findByPk(id)
+    .then(todo => res.render('detail', { todo: todo.toJSON() }))
+    .catch(error => console.log(error))
+})
+
 app.get('/users/logout', (req, res) => {
   res.send('logout')
 })
