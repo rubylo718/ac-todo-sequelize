@@ -1,0 +1,21 @@
+<form class="row g-3 mt-2" action="/todos" method="POST">
+  <div class="col-md-6">
+    <label for="name" class="form-label"><h5>Task Name</h5></label>
+    <input class="form-control" type="text" placeholder="name" name="name">
+  </div>
+  <div class="col-md-2">
+    <label for="priority" class="form-label"><h5>Task Priority</h5></label>
+    <select class="form-select" name="priority" id="priority">
+        <option value="2" selected>Normal</option>
+        <option value="1">High</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="note" class="form-label">Add some notes (optional)</label>
+    <textarea class="form-control" name="note" id="note" rows="3"></textarea>
+  </div>
+  <div class="col-md-2 d-flex">
+    <a class="btn btn-info" href="/" type="button">Back</a>
+    <button class="btn btn-success align-bottom mx-2" type="submit">Create</button>
+  </div>
+</form>
